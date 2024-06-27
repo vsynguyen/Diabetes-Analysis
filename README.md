@@ -68,6 +68,6 @@ This dataset contains comprehensive health data for 1,879 patients, uniquely ide
 # MODELS PREDICTIONS
 ## Classification - SVM models
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/585210b4-f41c-4479-b230-b184e3b528e5)
-
-
+## Classification - Logistic Regression
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/e9838fb1-77e7-493f-99e0-647f6aedc403)
 
