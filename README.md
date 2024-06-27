@@ -65,7 +65,9 @@ This dataset contains comprehensive health data for 1,879 patients, uniquely ide
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/447cd6fd-03bf-4dbe-975d-e2b9e9461c89)
 ![Correlation matrix](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/cb06f34f-4f44-4f83-bd22-2e7d296c3e13)
 
-
 # MODELS PREDICTIONS
+## Classification - SVM models
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/585210b4-f41c-4479-b230-b184e3b528e5)
+
 
 
