@@ -54,6 +54,18 @@ This dataset contains comprehensive health data for 1,879 patients, uniquely ide
 - **Diagnosis Information**
     - **Diagnosis**: 0 (No diabetes), 1 (Diabetes).
 # EXPLORATORY DATA ANALYSIS (EDA)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/22465cb6-ef05-4915-ae54-c14e9768fbab)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/69830625-e314-4fcf-9d07-52d0fa85998b)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/42953b16-108a-4d4f-908c-0b4b3648e5c2)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/360b0abe-2c27-4086-8e0a-3b0f7df7648b)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/91749e27-a20d-448c-a39d-ff6957af99cf)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/518a4777-df41-4909-bb71-f39e29307110)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/c8ffb145-2be5-41e2-829d-a922be6edeb0)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/c0623992-4d77-4257-a515-ca7d634ed99f)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/447cd6fd-03bf-4dbe-975d-e2b9e9461c89)
+![Correlation matrix](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/cb06f34f-4f44-4f83-bd22-2e7d296c3e13)
+
+
 # MODELS PREDICTIONS
 
 
