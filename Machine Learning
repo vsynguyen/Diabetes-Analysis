@@ -1,0 +1,47 @@
+# Classification - SVM models
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from ydata_profiling import ProfileReport
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import classification_report
+
+diabetes_data = pd.read_csv('diabetes_data.csv')
+
+# Data Split
+target = "Diagnosis"
+x = diabetes_data.drop[target, axis=1]
+y = diabetes_data[target]
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+
+# Data processing
+scaler = StandardScaler()
+x_train = scaler.fit_transform(x_train)
+x_test = scaler.transform(x_test)
+
+# Check data
+print(x_train.shape)
+print(y_train.shape)
+print(x_test.shape)
+print(y_test.shape)
+print(y_train.value_counts())
+print(y_test.value_counts())
+
+# Train model
+model = SVC()
+model.fit(x_train, y_train)
+y_predeict = model.predict(x_test)
+print(y_predict)
+print(y_test_values)
+
+# model evaluation
+	# method 1
+for i, j in zip(y_predict, y_test.values):
+	print("Prediction: {}. Actual value: {}.".format(i, j))
+	
+	# method 2 use classification report
+print(classification_report(y_test, y_predict))
