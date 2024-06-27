@@ -4,3 +4,171 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from ydata_profiling import ProfileReport
+
+
+diabetes_data = pd.read_csv('diabetes_data.csv')
+
+# Display data by html
+profile = ProfileReport(diabetes_data,title='Diabetes Report', explorative=True)
+profile.to_file('Diabetes Report.html')
+
+# display data manually
+diabetes_data.info()
+# handle column empty
+print(diabetes_data.isnull().sum())
+
+diabetes_data.dropna()
+data_drop = ['Unnamed: 18', 'Unnamed: 21', 'Unnamed: 23', 'Unnamed: 24', 'Unnamed: 25', 'Unnamed: 26', 'Unnamed: 38', 'Unnamed: 39']
+clean_data = diabetes_data.drop(columns=data_drop)
+diabetes_data.info()
+
+# BMI and diagnosis == 1
+
+mean_bmi_diabetes = diabetes_data[diabetes_data['Diagnosis'] == 1]['BMI'].mean()
+print(f'BMI trung bình của người bị tiểu đường là: {mean_bmi_diabetes: .2f}')
+
+# AGE with diagnosis == 1
+
+median_age_diagnosis = diabetes_data[diabetes_data['Diagnosis'] == 1]['Age'].median()
+print(f'Độ tuổi trung bình của người mắc tiểu đường là: {median_age_diagnosis: .2f}')
+
+# Display AlcoholConsumption
+percentiles = diabetes_data['AlcoholConsumption'].describe(percentiles=[0.25, 0.5, 0.75])
+print(percentiles)
+count    1879.000000
+mean       10.096587
+std         5.914216
+min         0.000928
+25%         4.789725
+50%        10.173865
+75%        15.285359
+max        19.996231
+
+# AlcoholConsumption with diagonosis == 1 and gender
+
+mean_AlcoholConsumption = diabetes_data[(diabetes_data['Diagnosis'] == 1) & (diabetes_data['Gender'] == 0)]['AlcoholConsumption'].mean()
+mean_AlcoholConsumption_female = diabetes_data[(diabetes_data['Diagnosis'] == 1) & (diabetes_data['Gender'] == 1)]['AlcoholConsumption'].mean()
+print(f'Trung bình nam sử dụng Alcoho trong 1 tuần: {mean_AlcoholConsumption: .2f}')
+print(f'Trung bình nữ sử dụng Alcoho trong 1 tuần: {mean_AlcoholConsumption_female: .2f}')
+
+# SystolicBP index
+mean_healthy = diabetes_data[(diabetes_data['Diagnosis'] == 1) &
+                               (diabetes_data['Smoking'] == 0) &
+                               (diabetes_data['AlcoholConsumption'] <= 3) &
+                               (diabetes_data['SleepQuality'] > 5) &
+                               (diabetes_data['PhysicalActivity'] > 5)]['SystolicBP'].mean()
+                            
+mean_not_healthy = diabetes_data[(diabetes_data['Diagnosis'] == 1) &
+                               (diabetes_data['Smoking'] == 1) &
+                               (diabetes_data['AlcoholConsumption'] >= 3) &
+                               (diabetes_data['SleepQuality'] < 5) &
+                               (diabetes_data['PhysicalActivity'] < 5)]['SystolicBP'].mean()
+print(f'{mean_healthy: .2f}')
+print(f'{mean_not_healthy: .2f}')
+
+# Ratio Male and Female by total
+total_male = diabetes_data[diabetes_data['Gender'] == 0].shape[0]
+total_female = diabetes_data[diabetes_data['Gender'] == 1].shape[0]
+
+male_diabetes = diabetes_data[(diabetes_data['Gender'] == 0) & (diabetes_data['Diagnosis'] == 1)].shape[0]
+female_diabetes = diabetes_data[(diabetes_data['Gender'] == 1) & (diabetes_data['Diagnosis'] == 1)].shape[0]
+genders = ['Male', 'Female']
+diabetes_counts = [male_diabetes, female_diabetes]
+total_counts = [total_male, total_female]
+bars = plt.bar(genders, diabetes_counts, color=['dodgerblue', 'pink'])
+for bar, count, total in zip(bars, diabetes_counts, total_counts):
+    percent = (count / total) * 100
+    plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.5, f'{count}\n{percent:.1f}%', ha='center', va='bottom')
+plt.xlabel('Gender')
+plt.ylabel('Count of Diagnosed Diabetes')
+
+plt.title('Diagnosed Diabetes Count by Gender')
+
+plt.show()
+
+# Ratio Male and Female diagnosis 
+total_male = diabetes_data[diabetes_data['Gender'] == 0].shape[0]
+total_female = diabetes_data[diabetes_data['Gender'] == 1].shape[0]
+
+male_diabetes = diabetes_data[(diabetes_data['Gender'] == 0) & (diabetes_data['Diagnosis'] == 1)].shape[0]
+male_no_diabetes = total_male - male_diabetes
+
+female_diabetes = diabetes_data[(diabetes_data['Gender'] == 1) & (diabetes_data['Diagnosis'] == 1)].shape[0]
+female_no_diabetes = total_female - female_diabetes
+
+genders = ['Male Diabetes', 'Male No Diabetes', 'Female Diabetes', 'Female No Diabetes']
+counts = [male_diabetes, male_no_diabetes, female_diabetes, female_no_diabetes]
+
+plt.bar(genders, counts, color=['dodgerblue', 'dodgerblue', 'pink', 'pink'])
+
+for i, count in enumerate(counts):
+    plt.text(i, count + 0.5, str(count), ha='center', va='bottom')
+
+plt.xlabel('Gender and Diabetes Status')
+plt.ylabel('Count')
+
+plt.title('Diabetes Count by Gender')
+
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+# Male by diagnosis
+total_male = diabetes_data[diabetes_data['Gender'] == 0].shape[0]
+
+male_diabetes_under30 = diabetes_data[(diabetes_data['Gender'] == 0)
+                                      & (diabetes_data['Age'] <= 30)
+                                      & (diabetes_data['Diagnosis'] == 1)].shape[0]
+
+male_diabetes_over30 = diabetes_data[(diabetes_data['Gender'] == 0)
+                                      & (diabetes_data['Age'] >30)
+                                      & (diabetes_data['Diagnosis'] == 1)].shape[0]
+
+genders = ['Male Diabetes <=30', 'Male Diabetes =>30', 'Total Male']
+counts = [male_diabetes_under30, male_diabetes_over30, total_male]
+
+plt.bar(genders, counts, color=['dodgerblue', 'dodgerblue', 'dodgerblue'])
+
+for i, count in enumerate(counts):
+    plt.text(i, count + 0.5, str(count), ha='center', va='bottom')
+
+plt.xlabel('Ratio Diabetes Male')
+plt.ylabel('Count')
+plt.title('Ratio Diabetes Male by Age')
+
+plt.tight_layout()
+plt.show()
+
+# Female by Diagnosis 
+total_female = diabetes_data[diabetes_data['Gender'] == 1].shape[0]
+
+diabetes_femaleunder30 = diabetes_data[(diabetes_data['Gender'] == 1)
+                                       & (diabetes_data['Age'] <= 30)
+                                       & (diabetes_data['Diagnosis'] == 1)].shape[0]
+diabetes_femaleover30 = diabetes_data[(diabetes_data['Gender'] == 1)
+                                      & (diabetes_data['Age'] > 30)
+                                      & (diabetes_data['Diagnosis'] == 1)].shape[0]
+
+genders = ['Diabetes Female <=30', 'Diabetes >30', 'Total Female']
+counts = [diabetes_femaleunder30, diabetes_femaleover30, total_female]
+
+plt.bar(genders, counts, color=['pink', 'pink', 'pink'])
+
+for i, count in enumerate(counts):
+    plt.text(i, count + 0.5, str(count), ha='center', va='bottom')
+
+plt.xlabel('Ratio Diabetes Female')
+plt.ylabel('Count')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+plt.show()
+
+# Correlation Matrix
+corr_matrix = diabetes_data.corr()
+plt.figure(figsize=(12, 10))
+sns.heatmap(corr_matrix, annot=True, cmap='RdBu_r', center=0)
+plt.title('Correlation Matrix')
+plt.xticks(range(len(corr_matrix.columns)), corr_matrix.columns, rotation=90)
+plt.yticks(range(len(corr_matrix.columns)), corr_matrix.columns)
+plt.show()
