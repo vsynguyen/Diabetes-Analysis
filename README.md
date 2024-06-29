@@ -63,7 +63,7 @@ This dataset contains comprehensive health data for 1,879 patients, uniquely ide
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/c8ffb145-2be5-41e2-829d-a922be6edeb0)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/c0623992-4d77-4257-a515-ca7d634ed99f)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/447cd6fd-03bf-4dbe-975d-e2b9e9461c89)
-![Correlation matrix](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/cb06f34f-4f44-4f83-bd22-2e7d296c3e13)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/ab063983-4f75-4c2f-8530-1d3e4715dab6)
 
 # MODELS PREDICTIONS
 ## Classification - SVM models
@@ -71,4 +71,5 @@ This dataset contains comprehensive health data for 1,879 patients, uniquely ide
 ## Classification - Logistic Regression
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/e9838fb1-77e7-493f-99e0-647f6aedc403)
 ## Classification - Random forest
-![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/db83e37f-d954-44ca-ae25-15f4bc3e5e9c)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/f76fc647-0aa2-4d02-9cad-229e07e99ebc)
+
