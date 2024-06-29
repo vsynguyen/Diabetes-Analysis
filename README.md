@@ -54,16 +54,13 @@ This dataset contains comprehensive health data for 1,879 patients, uniquely ide
 - **Diagnosis Information**
     - **Diagnosis**: 0 (No diabetes), 1 (Diabetes).
 # EXPLORATORY DATA ANALYSIS (EDA)
-![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/22465cb6-ef05-4915-ae54-c14e9768fbab)
-![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/69830625-e314-4fcf-9d07-52d0fa85998b)
-![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/42953b16-108a-4d4f-908c-0b4b3648e5c2)
-![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/360b0abe-2c27-4086-8e0a-3b0f7df7648b)
-![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/91749e27-a20d-448c-a39d-ff6957af99cf)
-![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/518a4777-df41-4909-bb71-f39e29307110)
-![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/c8ffb145-2be5-41e2-829d-a922be6edeb0)
-![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/c0623992-4d77-4257-a515-ca7d634ed99f)
-![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/447cd6fd-03bf-4dbe-975d-e2b9e9461c89)
-![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/ab063983-4f75-4c2f-8530-1d3e4715dab6)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/d27832ab-fd76-405d-bb3a-4bae375756dc)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/d27489d9-1ddf-4c56-b0dc-2008fce260ea)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/f37f14dc-59d2-4f64-9602-0bcc4a132416)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/314c469f-9f48-434a-a7ea-d28d8726039f)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/57fa355e-9163-4618-987a-0072548f8c84)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/f3e2120b-7d94-423a-941f-f72f75c9d0fd)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/b329bef4-fdfa-4159-b954-0f73c77c0974)
 
 # MODELS PREDICTIONS
 ## Classification - SVM models
