@@ -72,6 +72,31 @@ mean_not_healthy = diabetes_data[(diabetes_data['Diagnosis'] == 1) &
 print(f'{mean_healthy: .2f}')
 print(f'{mean_not_healthy: .2f}')
 
+# Quality Of Life Score and Age by Diagnosis
+filtered_data0 = diabetes_data[diabetes_data['Diagnosis'] == 0][['QualityOfLifeScore', 'Age']]
+filtered_data1 = diabetes_data[diabetes_data['Diagnosis'] == 1][['QualityOfLifeScore', 'Age']]
+
+sns.set_theme(style="whitegrid")
+
+plt.figure(figsize=(10, 6))
+sns.lineplot(x='Age', y='QualityOfLifeScore', data=filtered_data0, color='dodgerblue', linewidth=2.5)
+sns.lineplot(x='Age', y='QualityOfLifeScore', data=filtered_data1, color='red', linewidth=2.5)
+plt.title('QualityOfLifeScore and Age by Diagnosis')
+plt.xlabel('Age')
+plt.ylabel('QualityOfLifeScore')
+plt.show()
+
+# BMI and Age of people with diabetes
+df_db = diabetes_data[diabetes_data['Diagnosis'] == 1][['BMI', 'Age']]
+
+sns.set_theme(style="whitegrid")
+plt.figure(figsize=(10, 6))
+sns.lineplot(x='Age', y='BMI', data=df_db, color='red')
+plt.title('BMI and Age of people by dibetes')
+plt.xlabel('Age')
+plt.ylabel('BMI')
+plt.show()
+
 # Ratio Male and Female by total
 total_male = diabetes_data[diabetes_data['Gender'] == 0].shape[0]
 total_female = diabetes_data[diabetes_data['Gender'] == 1].shape[0]
