@@ -200,6 +200,65 @@ plt.tight_layout()
 
 plt.show()
 
+# EducationLevel by Gender 
+total_males = diabetes_data[diabetes_data['Gender'] == 0].groupby('EducationLevel').size()
+total_females = diabetes_data[diabetes_data['Gender'] == 1].groupby('EducationLevel').size()
+df_male = diabetes_data[(diabetes_data['Diagnosis'] == 1) & (diabetes_data['Gender'] == 0)].groupby('EducationLevel').size()
+df_female = diabetes_data[(diabetes_data['Diagnosis'] == 1) & (diabetes_data['Gender'] == 1)].groupby('EducationLevel').size()
+proportion_males = (df_male / total_males * 100)
+proportion_females = (df_female / total_females * 100)
+
+EducationLevel_statuses = sorted(diabetes_data['EducationLevel'].unique())
+male_proportions = [proportion_males.get(status, 0) for status in EducationLevel_statuses]
+female_proportions = [proportion_females.get(status, 0) for status in EducationLevel_statuses]
+
+bar_width = 0.35
+index = np.arange(len(EducationLevel_statuses))
+
+fig, ax = plt.subplots()
+bar1 = ax.bar(index, male_proportions, bar_width, label='Males', color='dodgerblue')
+bar2 = ax.bar(index + bar_width, female_proportions, bar_width, label='Females', color='hotpink')
+
+ax.set_xlabel('EducationLevel Status')
+ax.set_ylabel('Proportions (%)')
+ax.set_title('Diabetes by EducationLevel Status and Gender')
+ax.set_xticks(index + bar_width / 2)
+ax.set_xticklabels(['None', 'High School', 'Bachelor’s', 'Higher'])
+ax.legend()
+for bar in bar1:
+    height = bar.get_height()
+    ax.text(
+        bar.get_x() + bar.get_width() / 2,
+        height,
+        f'{height:.1f}%',
+        ha='center',
+        va='bottom'
+    )
+
+for bar in bar2:
+    height = bar.get_height()
+    ax.text(
+        bar.get_x() + bar.get_width() / 2,
+        height,
+        f'{height:.1f}%',
+        ha='center',
+        va='bottom'
+    )
+# Display the plot
+plt.tight_layout()
+plt.show()
+
+# HbA1c and Age of people Diabetes
+avg_hba1c = diabetes_data[diabetes_data['Diagnosis'] == 1][['HbA1c', 'Age']]
+
+sns.set_theme(style="whitegrid")
+plt.figure(figsize=(10, 6))
+sns.lineplot(x='Age', y='HbA1c', data=avg_hba1c, color='green')
+plt.title('HbA1c and Age of people by dibetes')
+plt.xlabel('Age')
+plt.ylabel('HbA1c')
+plt.show()
+
 # Correlation Matrix
 diabetes_new = ['Age', 'Gender', 'BMI', 'AlcoholConsumption', 'PhysicalActivity', 'FamilyHistoryDiabetes', 'SystolicBP',
                 'HbA1c', 'Diagnosis']
