@@ -57,10 +57,12 @@ This dataset contains comprehensive health data for 1,879 patients, uniquely ide
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/d27832ab-fd76-405d-bb3a-4bae375756dc)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/d27489d9-1ddf-4c56-b0dc-2008fce260ea)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/f37f14dc-59d2-4f64-9602-0bcc4a132416)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/2a948a26-b505-4c4c-b867-5cd8546195bc)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/c93d784e-1c7a-42e0-9aca-66159c704edc)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/4b781fb8-ebf8-4201-ad0e-b98e413921b2)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/57fa355e-9163-4618-987a-0072548f8c84)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/f3e2120b-7d94-423a-941f-f72f75c9d0fd)
+![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/00576c7f-de8f-4320-9f2c-6498fa617fe7)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/b329bef4-fdfa-4159-b954-0f73c77c0974)
 
 # MODELS PREDICTIONS
