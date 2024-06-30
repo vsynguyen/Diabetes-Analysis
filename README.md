@@ -63,6 +63,7 @@ This dataset contains comprehensive health data for 1,879 patients, uniquely ide
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/57fa355e-9163-4618-987a-0072548f8c84)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/f3e2120b-7d94-423a-941f-f72f75c9d0fd)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/00576c7f-de8f-4320-9f2c-6498fa617fe7)
+![HbA1c](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/5ae674e7-11fe-40c6-85d4-9438edd1d65a)
 ![image](https://github.com/vsynguyen/Diabetes-Analysis/assets/162006821/b329bef4-fdfa-4159-b954-0f73c77c0974)
 
 # MODELS PREDICTIONS
